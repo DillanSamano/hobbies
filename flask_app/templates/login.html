@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</div>
+<div style= "display: grid; place-items: center;color: red;">
+{% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+{% if messages %}                            <!-- check if there are any messages -->
+    {% for message in messages %}            <!-- loop through the messages -->
+        <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+    {% endfor %}
+{% endif %}
+{% endwith %}
+</div>
+
+
+<div class="title"style="display: grid; place-items: center;">
+    <h1>Login</h1>
+</div>
+
+<div class="log_style" style="display: grid; place-items: center;">
+        <form action="/login" method="post" >
+        <label for="email">email</label>
+        <input type="email"name="email">
+        <br>
+        <label for="password">password</label> 
+        <input type="password"name="password">
+</div>
+
+<div class="log_buttn" style="display: grid; place-items: center;">
+        <button>sumbit</button>
+        <br>
+        <a href="/success">sell all created users</a>
+    </div>
+</body>
+</html>

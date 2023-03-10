@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container text center" style="display: grid; place-items: center;">
+        <h1>hello , welcome!</h1>
+        <table class="table table-bordered table-dark table=hover">
+        <thead>
+            <th>Name</th>
+            <th>username</th>
+            <th>email</th>
+            <th>actions</th>
+        </thead>
+            {% for user in all_users %}
+            <tr>
+                <td><a href="/get_one_user/{{user.id}}"> {{user.name}}</a><td>
+                <td> {{user.username}} </td>
+                <td> {{user.email}} </td>
+                <td><a href="/show_user_edit/{{user.id}}">edit</a> | <a href="/delete/{{user.id}}">Delete</a></td>
+            </tr>
+            {%endfor%}
+        </table>
+        <a href="/create_hobby"> create a new hobby</a>
+    </div>
+
+    <!-- <a href="/clear_session">clear out your session</a>
+    <a href="/clear_first_name">clear out first Name from session</a> -->
+
+</body>
+</html>
